@@ -3,18 +3,22 @@
         <PrimeiroComponente />
         <p>O dado do app é: {{ testando }}</p>
         <LifeCycle />
+        <Pessoa />
     </div>
 </template>
 
 <script>
     import PrimeiroComponente from "./components/PrimeiroCOmponente.vue";
     import LifeCycle from "./components/LifeCycle.vue";
+    import Pessoa from "./components/Pessoa.vue";
     
     export default {
         name:'App',
         components: {
             PrimeiroComponente,
             LifeCycle,
+            Pessoa
+
          },
          data() {
             return{

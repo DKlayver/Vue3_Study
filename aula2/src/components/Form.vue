@@ -1,32 +1,63 @@
 <template>
-    <form action="">
+<div>  
+    <h2>Meu Formulário</h2>
+    <form action="" @submit="enviarFormulario($event)">
         <div>
-            <h2>Meu Formulário</h2>
+            <input type="text" v-model="name">
         </div>
         <div>
-            <InputText />
-        </div>
-        <div>
-            <InputText />
+            <input type="text" v-model="email">
         </div>
         <div>
             <Submit />
         </div>
- 
     </form>
-
+    <p>Conteúdo</p>
+    <p>Conteúdo</p>
+    <p>Conteúdo</p>
+</div>  
 </template>
 
 <script>
 import InputText from './Form/InputText.vue';
 import Submit from './Form/Submit.vue';
+
 export default {
     name: 'Form',
     components: {
         InputText,
         Submit
+    },
+    data () {
+        return {
+            name: "",
+            email: ""
+        }
+    },
+    methods: {
+        enviarFormulario(e) {
+            e.preventDefault();
+            
+            const name = this.name;
+            const email = this.email;
+
+            console.log("Formulário Enviado");
+
+            console.log("o nome é:", name);
+            console.log("o email é:", email);
+
+            // Ajax
+
+            // Inserir no banco de dados
+        }
     }
     
 }
 
 </script>
+
+<style scoped>
+p {
+    margin: 50px;
+}
+</style>
